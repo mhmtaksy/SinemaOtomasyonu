@@ -1,0 +1,62 @@
+﻿@model sinemaotomasyonu.Models.İzleyiciler
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+
+
+<h4>Güncelleme</h4>
+<br />
+<br />
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="izleyiciID" />
+            <div class="form-group">
+                <label asp-for="izleyiciAdi" class="control-label"></label>
+                <input asp-for="izleyiciAdi" class="form-control" />
+                <span asp-validation-for="izleyiciAdi" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="izleyiciSoyad" class="control-label"></label>
+                <input asp-for="izleyiciSoyad" class="form-control" />
+                <span asp-validation-for="izleyiciSoyad" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="seansID" class="control-label"></label>
+                <input asp-for="seansID" class="form-control" />
+                <span asp-validation-for="seansID" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Kaydet" class="btn btn-info" />
+            </div>
+        </form>
+    </div>
+</div>
+<br />
+<div>
+    <a asp-action="Index">Listeye geri dön..</a>
+</div>
+@section alt
+    {
+    <section id="cta" class="cta">
+        <div class="container" data-aos="zoom-in">
+
+            <div class="row">
+                <div class="col-lg-9 text-center text-lg-start">
+                    <h3>– Henry Mosquera;</h3>
+                    <p> Sahada, evle olan herhangi bir bağlantı seni daha da zayıflatır. Size bir zamanlar uygar, yumuşak olduğunuzu hatırlatır; ve bu seni kafandan bir kurşundan daha hızlı öldürebilir.</p>
+                </div>
+
+            </div>
+
+        </div>
+    </section><!-- End Cta Section -->
+}

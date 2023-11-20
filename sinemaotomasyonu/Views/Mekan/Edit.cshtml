@@ -1,0 +1,40 @@
+﻿@model sinemaotomasyonu.Models.Mekan
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+
+
+<h4>Güncelleme</h4>
+<br />
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="mekanID" />
+            <div class="form-group">
+                <label asp-for="mekanAdi" class="control-label"></label>
+                <input asp-for="mekanAdi" class="form-control" />
+                <span asp-validation-for="mekanAdi" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="mekanAdres" class="control-label"></label>
+                <input asp-for="mekanAdres" class="form-control" />
+                <span asp-validation-for="mekanAdres" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Kaydet" class="btn btn-info" />
+            </div>
+        </form>
+    </div>
+</div>
+<br />
+<div>
+    <a asp-action="Index">Listeye geri dön..</a>
+</div>
+

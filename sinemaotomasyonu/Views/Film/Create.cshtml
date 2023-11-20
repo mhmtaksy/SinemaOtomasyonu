@@ -1,0 +1,52 @@
+﻿@model sinemaotomasyonu.Models.Filmler
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<
+
+<h4>Ekleme</h4>
+<br />
+<br />
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="filmAdi" class="control-label"></label>
+                <input asp-for="filmAdi" class="form-control" />
+                <span asp-validation-for="filmAdi" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="filmKonu" class="control-label"></label>
+                <input asp-for="filmKonu" class="form-control" />
+                <span asp-validation-for="filmKonu" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="filmUcret" class="control-label"></label>
+                <input asp-for="filmUcret" class="form-control" />
+                <span asp-validation-for="filmUcret" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="mekanID" class="control-label"></label>
+                <input asp-for="mekanID" class="form-control" />
+                <span asp-validation-for="mekanID" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Oluştur" class="btn btn-info" />
+            </div>
+        </form>
+    </div>
+</div>
+<br />
+<div>
+    <a asp-action="Index">Listeye geri dön..</a>
+</div>
+

@@ -1,0 +1,42 @@
+﻿@model sinemaotomasyonu.Models.Koltuklar
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+
+
+<h3>Silmek istediğinize emin misiniz?</h3>
+<br />
+<div>
+    <h4>Koltuklar</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.koltukAdi)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.koltukAdi)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.koltukÇeşidi)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.koltukÇeşidi)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.filmID)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.filmID)
+        </dd>
+    </dl>
+    <br />
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="koltukID" />
+        <input type="submit" value="Sil" class="btn btn-danger" /> |
+        <a asp-action="Index">Listeye geri dön..</a>
+    </form>
+</div>
+

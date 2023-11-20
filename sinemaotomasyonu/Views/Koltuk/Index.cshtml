@@ -1,0 +1,48 @@
+﻿@model IEnumerable<sinemaotomasyonu.Models.Koltuklar>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<h1>Koltuk Listesi</h1>
+<br />
+<br />
+<p>
+    <a asp-action="Create">Oluştur</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.koltukAdi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.koltukÇeşidi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.filmID)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.koltukAdi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.koltukÇeşidi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.filmID)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.koltukID">Güncelle</a> |                
+                <a asp-action="Delete" asp-route-id="@item.koltukID">Sil</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,66 @@
+﻿@model IEnumerable<sinemaotomasyonu.Models.Görevli>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<h1>Görevli Listesi</h1>
+
+<p>
+    <a asp-action="Create">Görevli Ekle</a>
+</p>
+<br />
+<br />
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.görevliAdi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.görevliSoyad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.görevliMaas)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.görevliAdi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.görevliSoyad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.görevliMaas)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.görevliID">Güncelle</a> |
+                
+                <a asp-action="Delete" asp-route-id="@item.görevliID">Sil</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+@section alt
+    {
+    <section id="cta" class="cta">
+        <div class="container" data-aos="zoom-in">
+
+            <div class="row">
+                <div class="col-lg-9 text-center text-lg-start">
+                    <h3>– Henry Mosquera;</h3>
+                    <p> Sahada, evle olan herhangi bir bağlantı seni daha da zayıflatır. Size bir zamanlar uygar, yumuşak olduğunuzu hatırlatır; ve bu seni kafandan bir kurşundan daha hızlı öldürebilir.</p>
+                </div>
+
+            </div>
+
+        </div>
+    </section><!-- End Cta Section -->
+}

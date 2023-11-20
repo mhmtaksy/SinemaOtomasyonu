@@ -1,0 +1,45 @@
+﻿@model IEnumerable<sinemaotomasyonu.Models.Mekan>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<h1>Sinema Mekan Listesi</h1>
+
+<p>
+    <a asp-action="Create">Oluştur</a>
+</p>
+<br />
+<br />
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.mekanAdi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.mekanAdres)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.mekanAdi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.mekanAdres)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.mekanID">Düzenle</a> |
+                
+                <a asp-action="Delete" asp-route-id="@item.mekanID">Sil</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

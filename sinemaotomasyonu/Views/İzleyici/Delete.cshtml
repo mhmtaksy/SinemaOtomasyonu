@@ -1,0 +1,56 @@
+﻿@model sinemaotomasyonu.Models.İzleyiciler
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+
+
+<h3>Silmek istediğinize emin misiniz?</h3>
+<div>
+    <h4>İzleyiciler</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.izleyiciAdi)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.izleyiciAdi)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.izleyiciSoyad)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.izleyiciSoyad)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.seansID)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.seansID)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="izleyiciID" />
+        <input type="submit" value="Sil" class="btn btn-danger" /> |
+        <a asp-action="Index">Listeye geri dön..</a>
+    </form>
+</div>
+@section alt
+    {
+    <section id="cta" class="cta">
+        <div class="container" data-aos="zoom-in">
+
+            <div class="row">
+                <div class="col-lg-9 text-center text-lg-start">
+                    <h3>– Henry Mosquera;</h3>
+                    <p> Sahada, evle olan herhangi bir bağlantı seni daha da zayıflatır. Size bir zamanlar uygar, yumuşak olduğunuzu hatırlatır; ve bu seni kafandan bir kurşundan daha hızlı öldürebilir.</p>
+                </div>
+
+            </div>
+
+        </div>
+    </section><!-- End Cta Section -->
+}
